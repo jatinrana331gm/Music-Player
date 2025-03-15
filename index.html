@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="player">
+
+        <div class="logo">
+            <div class="center-circle"></div>
+        </div>
+
+        <div class="header">
+            <h2 id="song-title">Loading...</h2>
+            <div class="time">
+                <span id="current-time">0:00</span> /
+                <span id="duration">0:00</span>
+            </div>
+        </div>
+
+        <audio id="audio-player"></audio>
+
+
+        <input type="range" id="progress-bar" value="0" max="100">
+
+        <div class="controls">
+            <button id="prev-btn">⏮️</button>
+            <button id="play-btn">▶️</button>
+            <button id="next-btn">⏭️</button>
+            <button id="loopBtn">🔁</button>
+            <button id="shuffleBtn">🔀</button>
+        </div>
+        
+    </div>
+
+    <div class="filter">
+        <select id="category-selector" onchange="changeCategory(this.value)">
+            <option value="all" class="selected-all">All Songs</option>
+            <option value="trending">Trending</option>
+            <option value="hindi">Hindi</option>
+            <option value="punjabi">Punjabi</option>
+            <option value="haryanvi">Haryanvi</option>
+            <option value="english">English</option>
+        </select>
+    </div>
+
+    <ul id="playlist"></ul>
+
+    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
+
+</body>
+
+</html>
